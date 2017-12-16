@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="fullNewWeb:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/fullNewWeb_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="fullNewWeb/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="fullNewWeb" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="application" name="mysql-connector-java-5.1.44-bin" />
+          <element id="file-copy" path="$USER_HOME$/Desktop/mysql-connector-java-5.1.44-bin.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
