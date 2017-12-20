@@ -1,4 +1,6 @@
 <%@ page import="by.htp.library.entity.User" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: Denis
@@ -16,16 +18,22 @@
 
 
 <h2>
-    <% User user = (User)request.getAttribute("myuser");%>
-    <%=user.getName()%>
+
+    <jsp:useBean id="myuser" scope ="session" class="by.htp.library.entity.User"/>
+    <jsp:getProperty name="myuser" property="name"/>
+
     инфа обо всех пользователях<br/>
 
-        </h2>
+</h2>
 <form action="/FrontController" method="post">
-    <input name="login" value=<%=user.getLogin()%>><br>
-    <input name="password" value=<%=user.getPassword()%>><br>
-    <input type="hidden" name = "command" value="getAll"/><br>
+    <c:out value="${pageContext.request.getAttribute('myuser')}"/>
+    <%User user = (User) request.getAttribute("myuser");%>
+    <input type="hidden" name="login" value=<%=user.getLogin()%>><br>
+    <input type="hidden" name="password" value=<%=user.getPassword()%>><br>
+    <input type="hidden" name="command" value="getAll"/><br>
     <input type="submit" name="sign" value="sign">
+   <%-- <c:out value="${name}"/>--%>
+    
 </form>
 
 

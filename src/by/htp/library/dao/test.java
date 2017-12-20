@@ -10,7 +10,7 @@ public class test {
     private final static String SQL_USER_PASSWORD = new String("123456");
     public static void main(String[] args) throws DAOException{
 
-        /*try (Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1/library", "root", "123456")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1/library", "root", "123456")) {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM author");
             System.out.println(resultSet.getMetaData().getColumnCount());
@@ -31,7 +31,7 @@ public class test {
                 //System.out.println(resultSet.getString(++i));
                 System.out.println();
             }
-           resultSet = statement.executeQuery("SELECT * FROM library.order");
+           resultSet = statement.executeQuery("SELECT * FROM order");
             while(resultSet.next()){
                 for (int i=1;i<=resultSet.getMetaData().getColumnCount();i++){
                     System.out.print(resultSet.getString(i) + " ");
@@ -56,7 +56,7 @@ public class test {
                 System.out.println();
             }
         }catch(SQLException e){e.printStackTrace();}
-*/
+
         try (Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1/library", "root", "123456"/*SQLURL,SQLURL,SQL_USER_PASSWORD*/)){
             Statement statement = connection.createStatement();
             String log = "Valiyha_96";

@@ -11,13 +11,13 @@ public class SQLUserDAO implements UserDAO {
     private final String SQLURL = new String("jdbc:mysql://localhost/library");
     private final String SQL_USER = new String("root");
     private final String SQL_USER_PASSWORD = new String("123456");
-
+//Ajax технология
     @Override
     public boolean register(User user) throws DAOException {
         try {
             Connection connection = DriverManager.getConnection(SQLURL, SQL_USER, SQL_USER_PASSWORD);
             Statement statement = connection.createStatement();
-            //ResultSet resultSet = statement.executeQuery();
+            //ResultSet resultSet = statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }

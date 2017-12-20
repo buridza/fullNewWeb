@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class InformationAboutAll implements Command {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+               //System.out.println(request.g);
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         UserService userService = serviceFactory.getUserService();
 
@@ -42,7 +42,6 @@ public class InformationAboutAll implements Command {
             e.printStackTrace();
         }
         RequestDispatcher dispatcher = request.getRequestDispatcher(goToPage);
-
         dispatcher.forward(request, response);
     }
 }
